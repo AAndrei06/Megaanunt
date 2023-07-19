@@ -13,7 +13,7 @@ function showResultsSearch(){
             querySnapshot.forEach((doc) => {
                 if (doc.data().title.startsWith(topBarId.value)){
                     let redirectLink = "";
-                    if(window.location.pathname.startsWith("/home.html")){
+                    if(window.location.pathname.startsWith("/")){
                         redirectLink = `pages/product_detail.html?id=${doc.id}`;
                     }else{
                         redirectLink = `product_detail.html?id=${doc.id}`;
