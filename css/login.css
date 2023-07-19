@@ -1,0 +1,133 @@
+*{
+	font-family: Arial;
+	user-select: none;
+}
+
+.register-form{
+	width:400px;
+	height: 500px;
+	position: relative;
+	border:solid;
+	border-width: 1px;
+	border-color: lightgray;
+	border-top: solid;
+	border-top-width: 5px;
+	border-top-color: #0073bb;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	border-radius: 5px;
+}
+
+.input-element{
+	margin-top: 20px;
+	position: relative;
+}
+
+.image-container{
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+
+
+.input-field{
+	margin-left: 10%;
+	width:80%;
+	height: 30px;
+	border-radius: 3px;
+	border: 1px solid gray;
+	outline: 0px;
+	font-size: 16px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.name-of-input{
+	margin-left: 15%;
+	font-size: 11px;
+	position: absolute;
+	top:-16px;
+	width: auto;
+	background-color: white;
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+	z-index: 30;
+	color: #0073bb;
+	display: none;
+}
+
+.text-info{
+	display: block;
+	text-align: center;
+}
+
+.agree-text{
+	font-size: 12px;
+	position:relative;
+	top:-3px;
+	margin-left: 5px;
+	text-overflow: wrap;
+	display: inline-block;
+}
+
+.agree-text a{
+	color:black;
+}
+
+.check-element{
+	margin-left: 11%;
+}
+
+.text-info p{
+	position: relative;
+	top:-10px;
+}
+
+.submit-button{
+	width:81%;
+	margin-left: 10%;
+	height: 35px;
+	margin-top: 40px;
+	font-size: 20px;
+	padding: 4px;
+	background-color: #334462;
+	color:white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.error-message{
+	display: inline-block;
+	margin: 0px;
+	margin-left: 10%;
+	color:red;
+	font-size: 12px;
+}
+
+.ask-about{
+	font-size: 15px;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.ask-about a{
+	color: #0073bb;
+}
+
+@media all and (max-width:1025px){
+	.register-form{
+		margin-top: 30px;
+	}
+}
+
+@media all and (max-width:430px){
+	.register-form{
+		margin-top: 25px;
+		width:100%;
+	}
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/cart.css">
+	<link rel="icon" href="../images/icon.png">
+	<title>Cart</title>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+</head>
+
+<body>
+	<header>
+		<div id="menu-slide-area-banner" class="menu-slide-area-banner">
+			<i class="fa-solid fa-arrow-left"></i>
+			<div class="menu-slide-image">
+				<img draggable="false" width="230" src="../images/megaanunt.png">
+			</div>
+			<a href="search.html">
+				<div class="search-menu-slide">
+					<i class="slide-search fa-solid fa-magnifying-glass"></i>
+					<input class="slide-menu-search" type="text" name="slide-menu-search">
+				</div>
+			</a>
+			<div class="slide-menu-options">
+				<a class="link-menu-option" href="profile.html"><i
+					class="fa-solid fa-user"></i>&nbsp&nbspProfil</a>
+				<a class="link-menu-option" href="cart.html"><i class="fa-solid fa-shopping-cart"></i>&nbsp&nbspCoș</a>
+				<a class="link-menu-option" href="contact_us.html"><i
+						class="fa-solid fa-phone-volume"></i>&nbsp&nbspContactează-ne</a>
+				<a class="link-menu-option" href="blog.html"><i class="fa-solid fa-users"></i>&nbsp&nbspComunitate</a>
+				<a class="link-menu-option" href="settings.html"><i class="fa-solid fa-gear"></i>&nbsp&nbspSetări</a>
+			</div>
+			<div class="categories-slide-menu">
+				<h2 class="category-slide-title">Categorii</h2>
+				<div class="categories-list-slide-menu">
+					<a class="category-menu-option" href="category.html?category=toate"><i class="fa-solid fa-globe"></i>&nbsp&nbspToate</a>
+					<a class="category-menu-option" href="category.html?category=haine"><i class="fa-solid fa-shirt"></i>&nbsp&nbspHaine</a>
+					<a class="category-menu-option" href="category.html?category=transport"><i class="fa-solid fa-car"></i>&nbsp&nbspTransport</a>
+					<a class="category-menu-option" href="category.html?category=imobiliare"><i class="fa-solid fa-house"></i>&nbsp&nbspImobiliare</a>
+					<a class="category-menu-option" href="category.html?category=mobila"><i class="fa-solid fa-couch"></i>&nbsp&nbspMobilă</a>
+					<a class="category-menu-option" href="category.html?category=electrocasnice"><i
+							class="fa-solid fa-bolt"></i>&nbsp&nbspElectrocasnice</a>
+					<a class="category-menu-option" href="category.html?category=altele"><i class="fa-solid fa-ellipsis"></i>&nbsp&nbspAltele</a>
+					<a onclick="logoutUser()" id="logout-arrow" class="category-menu-option" style="margin-top: 70px;"
+						href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbspIeși din cont</a>
+				</div>
+			</div>
+		</div>
+		<div class="banner-object">
+			<div class="menu-icon-div">
+				<i class="menu-icon fa-solid fa-bars"></i>
+			</div>
+			<a href="../home.html">
+				<div class="image-block-banner">
+					<img width="230" src="../images/megaanunt.png">
+				</div>
+			</a>
+			<div class="search-product-banner">
+				<input class="input-search-cls" type="text" name="search-input" placeholder="Caută">
+				<i class="btn-search fa-solid fa-magnifying-glass"></i>
+				<div class="search-results-banner">
+					<div class="search-result-banner">
+						<p>Carucior</p>
+					</div>
+					<div class="search-result-banner">
+						<p>Masina</p>
+					</div>
+					<div class="search-result-banner">
+						<p>Bicicleta</p>
+					</div>
+					<div class="search-result-banner">
+						<p>Calculator</p>
+					</div>
+					<div class="search-result-banner">
+						<p>Mouse</p>
+					</div>
+					<div class="search-result-banner">
+						<p>Caiet</p>
+					</div>
+				</div>
+			</div>
+			<div class="menu-items">
+				<a href="contact_us.html">
+					<div class="about-contact">
+						<i class="fa-regular fa-address-card"></i>
+						<p>Despre Noi <br> Contactează-ne</p>
+					</div>
+				</a>
+				<a href="blog.html">
+					<div class="about-contact">
+						<i class="fa-solid fa-user-group"></i>
+						<p>Blog <br> Comunitate</p>
+					</div>
+				</a>
+				<a href="settings.html">
+					<div class="about-contact">
+						<i class="setari-mare fa-solid fa-gear"></i>
+						<p>Setări<br>Schimbă tema</p>
+					</div>
+				</a>
+			</div>
+			<div class="choices-category">
+				<button class="button-category">Categorii<p class="dropdown-v">▴</p></button>
+				<div class="categories">
+					<a href="category.html?category=toate"><div class="category-option">Toate</div></a>
+					<a href="category.html?category=haine"><div class="category-option">Haine</div></a>
+					<a href="category.html?category=transport"><div class="category-option">Transport</div></a>
+					<a href="category.html?category=imobiliare"><div class="category-option">Imobiliare</div></a>
+					<a href="category.html?category=mobila"><div class="category-option">Mobilă</div></a>
+					<a href="category.html?category=electrocasnice"><div class="category-option">Electrocasnice</div></a>
+					<a href="category.html?category=altele"><div class="category-option">Altele</div></a>
+				</div>
+			</div>
+			<a href="cart.html">
+				<div class="shooping-cart">
+					<i class="fa-solid fa-cart-shopping"></i>
+				</div>
+			</a>
+			<a href="profile.html">
+				<div class="profile-image-banner">
+					<img class="image-profile-cart" width="50" height="50" draggable="false">
+				</div>
+			</a>
+		</div>
+	</header>
+	<main>
+
+		<div class="container-content-main-content">
+			<p style="font-size: 20px;margin: 10px;margin-bottom:0px;font-weight: bold;color:#4a4a4a"
+				class="cart-products-count">
+				Coșul tău (<span id="number-of-products-in-cart">0</span> produse)
+			</p>
+
+
+			<div class="container-content-cart">
+
+			</div>
+			
+		</div>
+	</main>
+</body>
+<script src="https://kit.fontawesome.com/8383e75d7d.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../js/cart.js"></script>
+<script type="text/javascript" src="../js/firebase_main.js"></script>
+<script type="text/javascript" src="../js/firebase_cart.js"></script>
+<script type="text/javascript" src="../js/firebase_logout.js"></script>
+<script type="text/javascript" src="../js/firebase_search_top.js"></script>
+
+</html>

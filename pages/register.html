@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/register.css">
+	<link rel="icon" href="../images/icon.png">
+	<title>Înregistrează-te</title>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+</head>
+
+<body>
+	<main>
+		<div class="register-form">
+			<div class="image-container">
+				<img width="250" src="../images/megaanunt.png">
+			</div>
+			<div class="text-info">
+				<h1 style="color:#334462">Creează un Cont</h1>
+				<p style="color:#334462">și descoperă cele mai bune produse</p>
+			</div>
+			<div class="input-element">
+				<p class="name-of-input">Nume și Prenume</p>
+				<input id="name-input" class="input-field input1" type="text" name="name-input"
+					placeholder=" Nume și Prenume">
+				<p id="error1" class="error-message"></p>
+			</div>
+			<div class="input-element">
+				<p class="name-of-input">Adresa Electronică</p>
+				<input id="email-input" class="input-field input2" type="email" name="email-input"
+					placeholder=" Adresa Electronică">
+				<p id="error2" class="error-message"></p>
+			</div>
+			<div class="input-element">
+				<p class="name-of-input">Parola</p>
+				<input id="password1-input" class="input-field input3" type="password" name="password-input"
+					placeholder=" Parola">
+				<p id="error3" class="error-message"></p>
+			</div>
+			<div class="input-element">
+				<p class="name-of-input">Confirmă parola</p>
+				<input id="password2-input" class="input-field input4" type="password" name="password-confirm-input"
+					placeholder=" Confirmă Parola">
+				<p id="error4" class="error-message"></p>
+			</div>
+			<div class="input-element">
+				<input id="check-box-policy" class="check-element" type="checkbox" name="agree">
+				<p class="agree-text">Ești de acord cu <a class="link-policy" href="#">politica platformei</a></p>
+			</div>
+			<button class="submit-button" onclick="registerUser()">Înregistrează-te</button>
+			<p class="ask-about">Ai deja un cont?&nbsp<a href="login.html">Autentifică-te</a></p>
+		</div>
+	</main>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="../js/register.js"></script>
+<script type="text/javascript" src="../js/firebase_main.js"></script>
+<script type="text/javascript" src="../js/firebase_register.js"></script>
+</html>
