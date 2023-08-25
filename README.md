@@ -1,2 +1,2 @@
 # Megaanunt
-Ecommerce Platform for All Businesses
+Ecommerce Platform for All Businesses made with Firebase
