@@ -31,7 +31,7 @@ function mainActivity() {
                         postsContainer.innerHTML += `<a class = "link-for-product-detail" href = "pages/product_detail.html?id=${ad.id}">
                                                         <div class="product-object-home">
                                                             <div class="image-of-product">
-                                                                <img width = "100%" height="70%" src="${url}">
+                                                                <img width = "200" height="200" src="${url}">
                                                             </div>
                                                             <div class="title-of-product">
                                                                 <h5 class="title-of-product-home">${ad.data().title.slice(0,25)}</h5>
